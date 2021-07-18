@@ -1,0 +1,21 @@
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+▓                                                            ▓
+▓    多多软件站 www.ddooo.com 提供单机游戏和破解软件下载     ▓
+▓                                                            ▓
+▓    最安全绿色的软件下载网站，无病毒，无插件，无恶意代码    ▓
+▓                                                            ▓
+▓        软件如果加密，解压密码为：www.ddooo.com             ▓
+▓                                                            ▓
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+
+
+mysqldll.dll下载_解决mysqldll.dll丢失问题
+
+
+mysqldll.dll是微软vc组件的一个重要dll文件，缺少它可能会造成部分软件或游戏无法正常运行，如：战争游戏。当系统提示“没有找到mysqldll.dll”或“丢失mysqldll.dll”等类似错误信息，请下载本站提供的dll文件，使用它可以帮助用户解决上述问题。
+dll文件修复方法：
+1、解压下载的文件。
+2、复制文件“mysqldll.dll”到系统目录下。
+3、系统目录一般为：C:\WINNT\System32 64位系统为C:\Windows\SysWOW64
+4、最后点击开始菜单-->运行-->输入regsvr32 mysqldll.dll 后，回车即可解决错误提示。
+
