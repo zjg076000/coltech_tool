@@ -23,7 +23,6 @@ object frmmain: Tfrmmain
     Align = alTop
     BevelOuter = bvNone
     TabOrder = 0
-    ExplicitTop = -4
     object imgConnect: TImage
       Left = 4
       Top = 0
@@ -153,6 +152,7 @@ object frmmain: Tfrmmain
       Top = 33
       Width = 121
       Height = 20
+      PasswordChar = '*'
       ReadOnly = True
       TabOrder = 3
       Text = '123456'
@@ -190,7 +190,6 @@ object frmmain: Tfrmmain
     BevelOuter = bvNone
     Caption = 'Panel1'
     TabOrder = 1
-    ExplicitHeight = 629
     object PageControl1: TPageControl
       Left = 0
       Top = 0
@@ -201,7 +200,6 @@ object frmmain: Tfrmmain
       Style = tsFlatButtons
       TabHeight = 30
       TabOrder = 0
-      ExplicitHeight = 625
       object tab_symbols: TTabSheet
         Caption = '     '#26032#32929#26816#26597'       '
         object Panel2: TPanel
@@ -281,8 +279,6 @@ object frmmain: Tfrmmain
           BevelKind = bkTile
           BevelOuter = bvNone
           TabOrder = 2
-          ExplicitTop = 441
-          ExplicitHeight = 144
           object Label7: TLabel
             Left = 20
             Top = 45
@@ -402,7 +398,7 @@ object frmmain: Tfrmmain
             Left = 101
             Top = 119
             Width = 204
-            Height = 22
+            Height = 12
             Caption = #65288#30721#26631#30340#26684#24335#65306'code0.dbf+'#24403#22825#26085#26399#65289
             Font.Charset = GB2312_CHARSET
             Font.Color = clGray
@@ -415,7 +411,7 @@ object frmmain: Tfrmmain
             Left = 23
             Top = 91
             Width = 72
-            Height = 14
+            Height = 12
             Caption = #22791#20221#25991#20214#21517#65306
           end
           object Label32: TLabel
@@ -781,7 +777,6 @@ object frmmain: Tfrmmain
               SizeStyle = ssAuto
             end>
           TabOrder = 1
-          ExplicitHeight = 471
           object Panel7: TPanel
             Left = 0
             Top = 0
@@ -792,7 +787,6 @@ object frmmain: Tfrmmain
             BevelKind = bkTile
             BevelOuter = bvNone
             TabOrder = 0
-            ExplicitHeight = 467
             object Panel8: TPanel
               Left = 0
               Top = 0
@@ -857,7 +851,6 @@ object frmmain: Tfrmmain
             BevelKind = bkTile
             BevelOuter = bvNone
             TabOrder = 1
-            ExplicitHeight = 467
             object Panel10: TPanel
               Left = 0
               Top = 0
