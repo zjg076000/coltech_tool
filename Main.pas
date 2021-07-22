@@ -494,26 +494,6 @@ begin
 
   proc_Locate(edt_symbols.Text,'trade_product','ProductCode',Fdq_symbols);
 
-  {var symbols_array:=TRegEx.Split(edt_symbols.Text,',');
-
-  var num:=Length(symbols_array);
-  for I := 0 to num-1 do
-  begin
-      strsql:='SELECT * FROM trade_product ';
-      if I=0 then
-         strwhere:='ProductCode='''+symbols_array[i]+''''
-      else
-         strwhere:=strwhere+' or  ProductCode='''+symbols_array[i]+''' ';
-
-      strsql:=strsql+' where '+strwhere;
-  end;
-  with Fdq_symbols do
-  begin
-     close;
-     sql.text:=strsql;
-     open;
-  end;     }
-
 
 end;
 

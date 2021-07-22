@@ -195,7 +195,7 @@ object frmmain: Tfrmmain
       Top = 0
       Width = 1141
       Height = 637
-      ActivePage = TabWeek_report
+      ActivePage = tab_symbols
       Align = alClient
       Style = tsFlatButtons
       TabHeight = 30
