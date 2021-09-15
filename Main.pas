@@ -116,6 +116,25 @@ type
     edt_symbols_path: TEdit;
     SpeedButton3: TSpeedButton;
     SpeedButton4: TSpeedButton;
+    TabSheet1: TTabSheet;
+    Panel12: TPanel;
+    Label33: TLabel;
+    btnDomain: TSpeedButton;
+    Label34: TLabel;
+    edtDomain: TEdit;
+    Label35: TLabel;
+    NumBox_domain: TNumberBox;
+    CheckBox1: TCheckBox;
+    Label36: TLabel;
+    GridPanel2: TGridPanel;
+    Panel13: TPanel;
+    Panel14: TPanel;
+    Label37: TLabel;
+    DBGrid5: TDBGrid;
+    Panel15: TPanel;
+    Panel16: TPanel;
+    Label38: TLabel;
+    DBGrid6: TDBGrid;
     procedure btnConnectClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
@@ -126,6 +145,7 @@ type
     procedure SpeedButton3Click(Sender: TObject);
     procedure SpeedButton4Click(Sender: TObject);
     procedure sbtn_pasterClick(Sender: TObject);
+    procedure btnDomainClick(Sender: TObject);
   private
 
     procedure proc_readini;
@@ -514,6 +534,33 @@ end;
 procedure Tfrmmain.SpeedButton4Click(Sender: TObject);
 begin
   CopyFileClipbrd(edt_symbols_path.text+'\code1.dbf');
+end;
+
+procedure Tfrmmain.btnDomainClick(Sender: TObject);
+BEGIN
+ //[{"showName":"充值提现","entranceAddr":"https://pay.harvest163.com/ftpay-front-web/trans/payment.htm?merCode=smk20190115005"}]
+   var  str:='[{"showName":"充值提现","entranceAddr":"'+trim(edtDomain.text)
+          +'/ftpay-front-web/trans/payment.htm?merCode=smk20190115005"}]';
+
+
+    // 更新 成交模式数据  成交模式: 0:非实盘手动确认 1:实盘自动成交  2:非实盘自动确认)(A股)
+    var  strsql:=' UPDATE trade_product_config SET  TextValue='''+trim(str)+''''
+              +' WHERE ConfigType='''+IntToStr(NumBox_domain.ValueInt)+'''';
+    //更改 trade_product_config 的模式
+    Fun_ExecSql(strsql,Fdq_pub);
+
+    strsql:=' UPDATE trade_product_config_real SET  TextValue='''+trim(str)+''''
+              +' WHERE ConfigType='''+ inttostr(NumBox_domain.ValueInt)+'''';
+    //更改 trade_product_config 的模式
+    Fun_ExecSql(strsql,Fdq_pub);
+
+    //显示执行的结果 ---检验数据
+    strsql:='select  * from  trade_product_config  limit  100,10 ';
+    pro_LocateSql(strsql,Fdq_trade_product_config);
+
+    //显示执行的结果 ---检验数据
+    strsql:='select * from  trade_product_config_real limit 100,10 ';
+    pro_LocateSql(strsql,Fdq_trade_product_config_real);
 end;
 
 procedure Tfrmmain.sptn_changeClick(Sender: TObject);

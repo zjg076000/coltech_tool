@@ -195,7 +195,7 @@ object frmmain: Tfrmmain
       Top = 0
       Width = 1141
       Height = 637
-      ActivePage = tab_symbols
+      ActivePage = TabSheet1
       Align = alClient
       Style = tsFlatButtons
       TabHeight = 30
@@ -734,7 +734,7 @@ object frmmain: Tfrmmain
           end
           object chk_key: TCheckBox
             Left = 175
-            Top = 67
+            Top = 62
             Width = 42
             Height = 17
             Caption = #35299#38145
@@ -1024,6 +1024,263 @@ object frmmain: Tfrmmain
           end
         end
       end
+      object TabSheet1: TTabSheet
+        Caption = #20805#20540#36339#36716'-'#21518#21488#22495#21517#20462#25913
+        ImageIndex = 4
+        object Panel12: TPanel
+          Left = 0
+          Top = 0
+          Width = 1133
+          Height = 121
+          Align = alTop
+          BevelEdges = [beLeft, beTop, beRight]
+          BevelKind = bkTile
+          BevelOuter = bvNone
+          TabOrder = 0
+          ExplicitTop = -6
+          object Label33: TLabel
+            Left = 34
+            Top = 20
+            Width = 30
+            Height = 12
+            Caption = #22495#21517':'
+          end
+          object btnDomain: TSpeedButton
+            Left = 525
+            Top = 15
+            Width = 57
+            Height = 27
+            Caption = #25191#34892
+            OnClick = btnDomainClick
+          end
+          object Label34: TLabel
+            Left = 7
+            Top = 7
+            Width = 3
+            Height = 13
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clBlue
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            ParentFont = False
+          end
+          object Label35: TLabel
+            Left = 6
+            Top = 67
+            Width = 66
+            Height = 12
+            Caption = #35760#24405#20301#32622#21495':'
+          end
+          object Label36: TLabel
+            Left = 80
+            Top = 45
+            Width = 792
+            Height = 12
+            Caption = 
+              #26684#24335#65306'[{"showName":"'#20805#20540#25552#29616'","entranceAddr":"https://pay.harvest163.co' +
+              'm/ftpay-front-web/trans/payment.htm?merCode=smk20190115005"}]'
+          end
+          object edtDomain: TEdit
+            Left = 89
+            Top = 17
+            Width = 430
+            Height = 21
+            BevelEdges = [beBottom]
+            BevelInner = bvNone
+            BevelKind = bkFlat
+            BorderStyle = bsNone
+            TabOrder = 0
+          end
+          object NumBox_domain: TNumberBox
+            Left = 88
+            Top = 66
+            Width = 59
+            Height = 20
+            ReadOnly = True
+            TabOrder = 1
+            Value = 103.000000000000000000
+            SpinButtonOptions.Placement = nbspCompact
+          end
+          object CheckBox1: TCheckBox
+            Left = 166
+            Top = 67
+            Width = 42
+            Height = 17
+            Caption = #35299#38145
+            TabOrder = 2
+            OnClick = chk_keyClick
+          end
+        end
+        object GridPanel2: TGridPanel
+          Left = 0
+          Top = 121
+          Width = 1133
+          Height = 476
+          Align = alClient
+          BevelKind = bkTile
+          BevelOuter = bvNone
+          Caption = 'GridPanel1'
+          ColumnCollection = <
+            item
+              Value = 50.000000000000000000
+            end
+            item
+              Value = 50.000000000000000000
+            end>
+          ControlCollection = <
+            item
+              Column = 0
+              Control = Panel13
+              Row = 0
+            end
+            item
+              Column = 1
+              Control = Panel15
+              Row = 0
+            end>
+          RowCollection = <
+            item
+              Value = 100.000000000000000000
+            end
+            item
+              SizeStyle = ssAuto
+            end>
+          TabOrder = 1
+          ExplicitTop = 114
+          ExplicitHeight = 483
+          object Panel13: TPanel
+            Left = 0
+            Top = 0
+            Width = 564
+            Height = 472
+            Align = alClient
+            BevelEdges = [beRight, beBottom]
+            BevelKind = bkTile
+            BevelOuter = bvNone
+            TabOrder = 0
+            ExplicitHeight = 479
+            object Panel14: TPanel
+              Left = 0
+              Top = 0
+              Width = 562
+              Height = 41
+              Align = alTop
+              BevelEdges = [beBottom]
+              BevelKind = bkTile
+              BevelOuter = bvNone
+              TabOrder = 0
+              object Label37: TLabel
+                Left = 10
+                Top = 11
+                Width = 120
+                Height = 12
+                Caption = 'trade_product_config'
+              end
+            end
+            object DBGrid5: TDBGrid
+              Left = 0
+              Top = 41
+              Width = 562
+              Height = 429
+              Align = alClient
+              BorderStyle = bsNone
+              DataSource = Dso_trade_product_config
+              ReadOnly = True
+              TabOrder = 1
+              TitleFont.Charset = GB2312_CHARSET
+              TitleFont.Color = clWindowText
+              TitleFont.Height = -12
+              TitleFont.Name = #23435#20307
+              TitleFont.Style = []
+              Columns = <
+                item
+                  Expanded = False
+                  FieldName = 'ConfigType'
+                  Width = 69
+                  Visible = True
+                end
+                item
+                  Expanded = False
+                  FieldName = 'TextValue'
+                  Width = 397
+                  Visible = True
+                end
+                item
+                  Expanded = False
+                  FieldName = 'Remark'
+                  Width = 219
+                  Visible = True
+                end>
+            end
+          end
+          object Panel15: TPanel
+            Left = 564
+            Top = 0
+            Width = 565
+            Height = 472
+            Align = alClient
+            BevelEdges = [beRight, beBottom]
+            BevelKind = bkTile
+            BevelOuter = bvNone
+            TabOrder = 1
+            ExplicitHeight = 479
+            object Panel16: TPanel
+              Left = 0
+              Top = 0
+              Width = 563
+              Height = 41
+              Align = alTop
+              BevelEdges = [beLeft, beBottom]
+              BevelKind = bkTile
+              BevelOuter = bvNone
+              TabOrder = 0
+              object Label38: TLabel
+                Left = 15
+                Top = 11
+                Width = 150
+                Height = 12
+                Caption = 'trade_product_config_real'
+              end
+            end
+            object DBGrid6: TDBGrid
+              Left = 0
+              Top = 41
+              Width = 563
+              Height = 429
+              Align = alClient
+              BorderStyle = bsNone
+              DataSource = Dso_trade_product_config_real
+              ReadOnly = True
+              TabOrder = 1
+              TitleFont.Charset = GB2312_CHARSET
+              TitleFont.Color = clWindowText
+              TitleFont.Height = -12
+              TitleFont.Name = #23435#20307
+              TitleFont.Style = []
+              Columns = <
+                item
+                  Expanded = False
+                  FieldName = 'ConfigType'
+                  Width = 69
+                  Visible = True
+                end
+                item
+                  Expanded = False
+                  FieldName = 'TextValue'
+                  Width = 306
+                  Visible = True
+                end
+                item
+                  Expanded = False
+                  FieldName = 'Remark'
+                  Width = 219
+                  Visible = True
+                end>
+            end
+          end
+        end
+      end
     end
   end
   object DataSource1: TDataSource
@@ -1054,7 +1311,7 @@ object frmmain: Tfrmmain
   end
   object FDQuery1: TFDQuery
     Connection = dbMain
-    Left = 192
+    Left = 280
     Top = 208
   end
   object ImageCollection1: TImageCollection
@@ -1074,8 +1331,8 @@ object frmmain: Tfrmmain
   end
   object Fdq_pub: TFDQuery
     Connection = dbMain
-    Left = 816
-    Top = 96
+    Left = 904
+    Top = 104
   end
   object Dso_Tel: TDataSource
     DataSet = Fdq_Tel
