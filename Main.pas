@@ -135,6 +135,16 @@ type
     Panel16: TPanel;
     Label38: TLabel;
     DBGrid6: TDBGrid;
+    TabSheet2: TTabSheet;
+    Panel17: TPanel;
+    Label39: TLabel;
+    SpeedButton5: TSpeedButton;
+    Label40: TLabel;
+    Label41: TLabel;
+    Label42: TLabel;
+    Edit1: TEdit;
+    NumberBox1: TNumberBox;
+    CheckBox2: TCheckBox;
     procedure btnConnectClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
