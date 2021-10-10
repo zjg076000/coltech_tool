@@ -1,0 +1,222 @@
+inherited FrmUserTel: TFrmUserTel
+  Caption = #26356#25913#29992#25143#25163#26426
+  ClientHeight = 568
+  ClientWidth = 1093
+  Font.Charset = GB2312_CHARSET
+  Font.Height = -15
+  Font.Name = #26032#23435#20307
+  ExplicitLeft = 3
+  ExplicitTop = 3
+  ExplicitWidth = 1111
+  ExplicitHeight = 615
+  PixelsPerInch = 96
+  TextHeight = 15
+  inherited Panel1: TPanel
+    Width = 1093
+    Height = 44
+    BevelEdges = [beLeft, beTop, beRight]
+    ExplicitWidth = 1093
+    ExplicitHeight = 44
+    inherited btnExit: TSpeedButton
+      Left = 1009
+      Height = 42
+    end
+    object Label12: TLabel
+      Left = 14
+      Top = 12
+      Width = 88
+      Height = 15
+      Caption = #29992#25143#25163#26426#21495':'
+    end
+    object Label14: TLabel
+      Left = 349
+      Top = 11
+      Width = 88
+      Height = 15
+      Caption = #30331#24405#29992#25143#21517':'
+    end
+    object spbtn_tel: TSpeedButton
+      Left = 679
+      Top = 7
+      Width = 74
+      Height = 23
+      Caption = #25191#34892
+      ImageIndex = 1
+      ImageName = #26597#35810
+      Images = VirtualImageList1
+      Flat = True
+      OnClick = spbtn_telClick
+    end
+    object edt_tel: TEdit
+      Left = 108
+      Top = 8
+      Width = 225
+      Height = 21
+      BevelEdges = [beBottom]
+      BevelInner = bvNone
+      BevelKind = bkFlat
+      BorderStyle = bsNone
+      TabOrder = 0
+    end
+    object edt_usercode: TEdit
+      Left = 448
+      Top = 8
+      Width = 225
+      Height = 21
+      BevelEdges = [beBottom]
+      BevelInner = bvNone
+      BevelKind = bkFlat
+      BorderStyle = bsNone
+      TabOrder = 1
+    end
+  end
+  object GrdTel: TDBGrid [1]
+    Left = 0
+    Top = 44
+    Width = 1093
+    Height = 524
+    Align = alClient
+    DataSource = dso_tel
+    ReadOnly = True
+    TabOrder = 1
+    TitleFont.Charset = GB2312_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -15
+    TitleFont.Name = #26032#23435#20307
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'UserName'
+        Width = 93
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'LoginName'
+        Width = 127
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Mobile'
+        Width = 176
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Status'
+        Width = 135
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'CreateTime'
+        Width = 130
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'LastLoginTime'
+        Width = 138
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'LastLoginIP'
+        Width = 154
+        Visible = True
+      end>
+  end
+  inherited ImageCollection1: TImageCollection
+    Images = <
+      item
+        Name = #36864#20986' (1)'
+        SourceImages = <
+          item
+            Image.Data = {
+              89504E470D0A1A0A0000000D4948445200000020000000200806000000737A7A
+              F4000001F2494441545847ED97BF4B1B6118C73FCF453BC4C15BD4E2D2417050
+              506785E6702C8A591A75B6C15F430705C17FA15570B250872A854086A2AD8BF1
+              571CA44396E8A8143255C4251DFC0162AEBCE7EFE4924B3497D09277BB7BBFF0
+              7C9EE7FDDE73EF23804619971402A087827D68F21A33B59F1C58582C06774E00
+              3D34D48E880F4DFA04316E039A983BC9C0E7EEA203D42EBD7B25D5E2C3830FF0
+              0BA2DB057105400F076705799F4F566D5C24A3FC8EE7A3B5D3A44CBE7BFA37E6
+              D4DEDD11E8E1E096202A73C7D5C939AB1C39EA72087624B0611D6105E03FAC40
+              63279C1D43F2572E8FB8E8016306BCF5B03E0297A7D9205C06A86BBBAE407422
+              1B44090054EE8935887DB4AB429101BC0D50D3701DA8630CF4A6FBA087DF203E
+              9F0E5118C09BC60EBE768D124AFC643CF6858C46E45F86EA9AECA68B7D8044E4
+              E17E610053ADBD4CB5F4B07B72406F742613E0EDBA73578C4EC2C9DEADEE1F03
+              E8AA6BE68731C1A7C34DA6E3E1D21F417A7D333C6099F0E58D09478B6F424780
+              8702D588541FB03EC308280366AEC23CF02480B23622D51322C3656AC565FF19
+              397704A570D1031580675420EF6B793BE77FB6397AF2B5FCEA2A355735B8B5F2
+              E856AC1EACC1E40506A2F944F0AB577609B93298D805B24633CD6320A61ACDEE
+              66869201A44359C3A91ADB52E65E4986D3FCFCF43CD55FFC3D30705645C45000
+              00000049454E44AE426082}
+          end>
+      end
+      item
+        Name = #26597#35810
+        SourceImages = <
+          item
+            Image.Data = {
+              89504E470D0A1A0A0000000D4948445200000020000000200806000000737A7A
+              F4000003EA494441545847CD974B685C6514C7FFE73E6612ABB5DDD54599F858
+              6BB2A8A6B50F5D286E4474232E848228221482A54ED25671D197457116BAB29B
+              8A425DE946A474932C4245A199DAAD422A112A21AF79DCD7F738F2DD993B9D99
+              7B6726134BD3BBBBF37DF79CDF39FF73CEF70D619B1FDA66FF78F001F497AFFD
+              4816A99E99AA57FFC95C8BC41AC268157EF02D95CAEBBDBECFCC009F79F900F6
+              EC99C5E8C36E5F89420FF02BD95BEA1E50F3E23516E26F12E1ABF4F98D3FBA37
+              A70062E78527E66159FDCB8335B0B16CCC67EFABD4003FB8BBA69586F627E85C
+              27441AE09BB7233CF448FFC88D596F0388FCDE902B6B80EC548EA5F8CB3A77FD
+              A9F68FD200DFBDCFA001D1F74BBDB1AE35B0BC9A86530A7476BEC3671AE0FB0F
+              7AE4B4694F0AA0B6D25F1E937A2341D653A93C4EA5F262B2341C40EC7C15D0CA
+              149682904BE4BA8FC175721D35B3BE018422ED9E19B25A7DD12D9567870768A6
+              9D2BD55BD6CCB5A7BBADEBB32FCDD1CE1D87A11930FA673D52427ADE9000A6DA
+              4DC18910585B29D2E9B98B896D3E3E51A02F166EB7DECF1CF988617F4691BC07
+              00C6B1A972DF68C9E05AFDB655BC3AC653E3BB383F729572EEB32002988D1C4B
+              1404878CB6AAF8DC792B9F9FCE22601141F9C1800C5C7E9763C7718B35EB516B
+              D0B19FE27A91C5C9DFEC7C6E5FB7038EC49275E1FADEB8094E1D94645B764A26
+              3F8016D10080AFDF48750187A1B23EFCD989A7DAE9839C35A474DD83A5E46E33
+              76F5CC8105729DF16E0055AB81B51E1E009E5FA513BFEC8C013E399C02D47E00
+              16128C86713DB37F965CF7480780525075BFB5A777170CCAC0C78738D6BEF924
+              CECDAB0D1DF7B83EB9FF4F72DC27DB01388CA0C3686B0066B22535A0A727CB94
+              CB3D638A4F791EA01A0961F04DB7B410A75D9F7ADE27DB1E690198BDB57A5C52
+              499686CA40ECA0D9FFA60BF4C84899C3A890D42883E71CF01495CA65559CBC64
+              E573EF6445DF00DD4A0DC461696065F9187D3AFF55625C4C8DBFE000E5F6F39E
+              A7F7BDC94EFE0A25A7A9D1DEF35B0D353C8039D1A2A871B44692A1C4253AFFEB
+              7BA90A379193BA46177EFFA10541D421D3E63270F19586A861D4885AE9F44CD1
+              5AB254B7C8A27566DE4BB63D06CB72A0CDB00FDE4A20B4A22BA63B3AE4182841
+              469B654DB59EBFB541C8A98945800AF717C0944B10F81C897F011AEB064D5AB5
+              7717FC9F0C30437B3E384BB6A647A774A3FF85246B886C460273D0E820EA7945
+              6CD8E0CB4E69E168BBBDF485E4F8448147772CB6DA68807796021C8ABE51374D
+              6CD8D0E3EDB721F37BF6B5DC40E4476F92E33C9AF2CF0C28052DE35BD180889B
+              713706D5D16EE73D0112A7E6C2A1EDDCEBAD771DDD61C977362349B2A77B5075
+              7FFBE0FF351B26DAADECDDF60CFC079D15713F77FC9F6D0000000049454E44AE
+              426082}
+          end>
+      end>
+  end
+  inherited VirtualImageList1: TVirtualImageList
+    Images = <
+      item
+        CollectionIndex = 0
+        CollectionName = #36864#20986' (1)'
+        Name = #36864#20986' (1)'
+      end
+      item
+        CollectionIndex = 1
+        CollectionName = #26597#35810
+        Name = #26597#35810
+      end>
+  end
+  object Fdq_Tel: TFDQuery
+    Left = 392
+    Top = 336
+  end
+  object dso_tel: TDataSource
+    DataSet = Fdq_Tel
+    Left = 576
+    Top = 360
+  end
+end

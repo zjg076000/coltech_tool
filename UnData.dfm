@@ -1,7 +1,7 @@
-object data: Tdata
-  OldCreateOrder = False
-  Height = 314
-  Width = 583
+object dm_data: Tdm_data
+  Height = 251
+  Width = 486
+  PixelsPerInch = 120
   object FDConnection1: TFDConnection
     ConnectionName = 'conn'
     Params.Strings = (
@@ -12,18 +12,22 @@ object data: Tdata
       'DriverID=MySQL')
     ResourceOptions.AssignedValues = [rvAutoReconnect]
     LoginPrompt = False
-    Left = 232
-    Top = 136
+    Left = 56
+    Top = 40
   end
   object FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink
     DriverID = 'MySQL'
     VendorLib = 'C:\Windows\System32\libmysql.dll'
-    Left = 296
-    Top = 192
+    Left = 80
+    Top = 136
   end
   object FDGUIxWaitCursor1: TFDGUIxWaitCursor
     Provider = 'Forms'
-    Left = 336
-    Top = 136
+    Left = 192
+    Top = 40
+  end
+  object Fdq_pub: TFDQuery
+    Left = 367
+    Top = 72
   end
 end
