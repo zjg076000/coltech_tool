@@ -197,9 +197,10 @@ type
 
 
   public
+     appPath:String;
      procedure proc_readini;
 
-    procedure proc_readini_pub(IniFile, Section, Ident, Default: string;
+     procedure proc_readini_pub(IniFile, Section, Ident, Default: string;
       Edt: TEdit);
 
     procedure pro_readini_symbols;
@@ -220,6 +221,11 @@ type
     // var1-> EdtStr:string   查询条件的字符串，，用 ’，’ 分割成字符串数组，如： 600007,600015...
     // var2-> FieldValue:string:查询数据表字段的名称。字符型  如：usercode  作为条件的字段  usercode='张三'
     function Fun_WhereSql(EdtStr, FieldValue: string): string;
+
+
+    function FunInitComItemValue(cmb:TComboBox):TComboBox;
+
+
   end;
 
 var
@@ -366,6 +372,7 @@ end;
 procedure Tfrmmain.FormCreate(Sender: TObject);
 begin
   // TStyleManager.SetStyle(cbxVclStyles.Text);
+  appPath:=ExtractFilePath(Application.Exename) + 'Config.ini';
   proc_readini;
   pro_readini_symbols;
 end;
@@ -373,6 +380,30 @@ end;
 procedure Tfrmmain.FormShow(Sender: TObject);
 begin
    //    PageControl1.tab
+end;
+
+function Tfrmmain.FunInitComItemValue(cmb: TComboBox): TComboBox;
+var
+   edt:Tedit;
+   i:integer;
+begin
+    cmb.Items.Clear;
+    var strIniFile := ExtractFilePath(Application.Exename) + 'Config.ini';
+    edt:=tedit.Create(self);
+    frmmain.proc_readini_pub(strIniFile,'server','app','',edt);
+    var appstr:=trim(edt.text);
+    var var_array := TRegEx.Split(appstr, ',');
+    var
+  num := length(var_array);
+
+  for I := 0 to num - 1 do
+  begin
+    cmb.Items.add(trim(var_array[i]));
+
+
+  end;
+
+
 end;
 
 Function Tfrmmain.fun_check(StrValue, str_message: string): boolean;

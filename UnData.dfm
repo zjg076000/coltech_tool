@@ -1,7 +1,7 @@
 object dm_data: Tdm_data
+  OldCreateOrder = True
   Height = 251
   Width = 486
-  PixelsPerInch = 120
   object FDConnection1: TFDConnection
     ConnectionName = 'conn'
     Params.Strings = (

@@ -11,6 +11,7 @@ object frmmain: Tfrmmain
   Font.Name = #23435#20307
   Font.Style = []
   Menu = MainMenu1
+  OldCreateOrder = True
   WindowState = wsMaximized
   OnCreate = FormCreate
   OnShow = FormShow
@@ -141,7 +142,7 @@ object frmmain: Tfrmmain
       Top = 0
       Width = 1394
       Height = 575
-      ActivePage = TabSheet2
+      ActivePage = tab_symbols
       Align = alClient
       Images = VirtualImageList1
       TabHeight = 30
@@ -1543,7 +1544,7 @@ object frmmain: Tfrmmain
         Caption = '-'
       end
       object N11: TMenuItem
-        Caption = #26381#21153#29256#26412#21319#32423
+        Caption = #36828#31243'Linux'#24037#20855
         OnClick = N11Click
       end
     end
@@ -1798,40 +1799,49 @@ object frmmain: Tfrmmain
   end
   object VirtualImageList1: TVirtualImageList
     AutoFill = True
+    DisabledGrayscale = False
+    DisabledSuffix = '_Disabled'
     Images = <
       item
         CollectionIndex = 0
         CollectionName = #26174#31034
+        Disabled = False
         Name = #26174#31034
       end
       item
         CollectionIndex = 1
         CollectionName = #38544#34255
+        Disabled = False
         Name = #38544#34255
       end
       item
         CollectionIndex = 2
         CollectionName = #30005#35805
+        Disabled = False
         Name = #30005#35805
       end
       item
         CollectionIndex = 3
         CollectionName = 'database'
+        Disabled = False
         Name = 'database'
       end
       item
         CollectionIndex = 4
         CollectionName = 'weekly'
+        Disabled = False
         Name = 'weekly'
       end
       item
         CollectionIndex = 5
         CollectionName = #32929#31080
+        Disabled = False
         Name = #32929#31080
       end
       item
         CollectionIndex = 6
         CollectionName = 'icon-'#25163#21160#35843#25972
+        Disabled = False
         Name = 'icon-'#25163#21160#35843#25972
       end>
     ImageCollection = ImageCollection1

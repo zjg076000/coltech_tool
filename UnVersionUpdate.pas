@@ -10,7 +10,7 @@ uses
   DateUtils,IOUtils, System.Win.Registry,
   tgputtylib,tgputtysftp, Vcl.ComCtrls, UBaseForm, Vcl.ExtCtrls, Vcl.WinXCtrls,
   System.ImageList, Vcl.ImgList, Vcl.VirtualImageList, Vcl.BaseImageCollection,
-  Vcl.ImageCollection, Vcl.Buttons, Vcl.Menus;
+  Vcl.ImageCollection, Vcl.Buttons, Vcl.Menus, RegularExpressions;
 
 
 
@@ -92,6 +92,17 @@ type
     Panel9: TPanel;
     Label9: TLabel;
     edt_remotepath: TEdit;
+    tab_server: TTabSheet;
+    Panel18: TPanel;
+    Panel19: TPanel;
+    Panel20: TPanel;
+    cmb_app: TComboBox;
+    Label11: TLabel;
+    FlowPanel1: TFlowPanel;
+    sbtn_1: TSpeedButton;
+    spbtn_2: TSpeedButton;
+    sbtn_3: TSpeedButton;
+    sbtn_4: TSpeedButton;
     function ListingCallback(const names:Pfxp_names):Boolean;
     procedure SpeedButton1Click(Sender: TObject);
     procedure btnOpenFileClick(Sender: TObject);
@@ -121,6 +132,7 @@ type
     procedure btnLoadClick(Sender: TObject);
     procedure btn_saveClick(Sender: TObject);
     procedure btn_selectdowndirClick(Sender: TObject);
+    procedure cmb_appChange(Sender: TObject);
   private
     PSFTP: TTGPuttySFTP;
     FTotalToCopy: Int64;
@@ -138,6 +150,8 @@ var
 implementation
 
 {$R *.dfm}
+
+uses Main;
 
 procedure TFrmVersionUpdate.btConnectClick(Sender: TObject);
 begin
@@ -378,6 +392,40 @@ begin
     end;
 end;
 
+procedure TFrmVersionUpdate.cmb_appChange(Sender: TObject);
+var i, i_count:integer;
+begin
+ // inherited;
+  var edt:=tedit.create(Self);
+  frmmain.proc_readini_pub(frmmain.appPath,cmb_app.text,'configfile','',edt);
+   var appstr:=trim(edt.text);
+   var var_array := TRegEx.Split(appstr, ',');
+   var
+    num := length(var_array);
+
+
+      for   var j:=ComponentCount-1   downto   0   do
+      begin
+
+        if   (Components[j]    is  TSpeedButton)    then
+         begin
+           if i_count<num then
+            begin
+              TSpeedButton(Components[j]).visible:=true;
+              TSpeedButton(Components[j]).caption:=var_array[i_count];
+              i_count:=i_count+1;
+            end;
+             // TSpeedButtion(Components[j]).visible:=true;
+             // TSpeedButtion(Components[j]).visible:=true;
+         end;
+
+
+
+
+  end;
+
+end;
+
 procedure TFrmVersionUpdate.FormCreate(Sender: TObject);
 begin
   PSFTP := TTGPuttySFTP.Create(true);
@@ -555,8 +603,9 @@ procedure TFrmVersionUpdate.FormShow(Sender: TObject);
 begin
   LoadSettings;
   ProgressBar1.Visible := false;
-  memLog.Lines.Add('Library version: ' + string(PSFTP.LibVersion));
+  memLog.Lines.Add('Library version: ' +string(PSFTP.LibVersion));
 
+  frmmain.FunInitComItemValue(cmb_App);
 end;
 
 end.

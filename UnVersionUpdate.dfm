@@ -1,5 +1,5 @@
 inherited FrmVersionUpdate: TFrmVersionUpdate
-  Caption = #26381#21153#29256#26412#21319#32423
+  Caption = #36828#31243'LINUX'#24037#20855
   ClientHeight = 657
   ClientWidth = 1640
   Font.Charset = GB2312_CHARSET
@@ -8,14 +8,13 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   OnShow = FormShow
-  ExplicitWidth = 1658
-  ExplicitHeight = 704
+  ExplicitWidth = 1656
+  ExplicitHeight = 696
   PixelsPerInch = 96
   TextHeight = 15
   inherited Panel1: TPanel
     Width = 1640
     Height = 43
-    ExplicitTop = -3
     ExplicitWidth = 1640
     ExplicitHeight = 43
     inherited btnExit: TSpeedButton
@@ -41,8 +40,8 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
       ExplicitHeight = 37
     end
     object Label3: TLabel
-      Left = 63
-      Top = 10
+      Left = 62
+      Top = 9
       Width = 61
       Height = 15
       Caption = #26381#21153#22120'IP'
@@ -177,8 +176,6 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
     Placement = svpLeft
     TabOrder = 1
     UseAnimation = False
-    ExplicitTop = 35
-    ExplicitHeight = 622
     object Panel4: TPanel
       Left = 0
       Top = 0
@@ -211,7 +208,6 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
       BevelKind = bkFlat
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitHeight = 309
       object FileListBox1: TFileListBox
         AlignWithMargins = True
         Left = 3
@@ -222,8 +218,6 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
         ItemHeight = 18
         MultiSelect = True
         TabOrder = 0
-        ExplicitLeft = 5
-        ExplicitTop = 27
       end
     end
     object Panel6: TPanel
@@ -259,20 +253,17 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
     BevelKind = bkFlat
     BevelOuter = bvNone
     TabOrder = 2
-    ExplicitTop = 35
-    ExplicitHeight = 622
     object PageControl1: TPageControl
       AlignWithMargins = True
       Left = 3
       Top = 3
       Width = 1380
       Height = 606
-      ActivePage = TabSheet1
+      ActivePage = tab_server
       Align = alClient
       Style = tsButtons
       TabOrder = 0
       StyleName = 'Windows'
-      ExplicitLeft = 4
       object TabSheet1: TTabSheet
         Caption = #36828#31243#26381#21153#22120
         object Panel8: TPanel
@@ -285,8 +276,6 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
           BevelKind = bkFlat
           BevelOuter = bvLowered
           TabOrder = 0
-          ExplicitLeft = -3
-          ExplicitTop = -1
           object btUpload: TButton
             Left = 11
             Top = 8
@@ -359,7 +348,6 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
           Align = alClient
           BevelOuter = bvNone
           TabOrder = 1
-          ExplicitTop = -8
           object sgRemoteFiles: TStringGrid
             AlignWithMargins = True
             Left = 3
@@ -378,8 +366,6 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
             Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goRowSelect, goFixedHotTrack]
             TabOrder = 0
             OnDblClick = sgRemoteFilesDblClick
-            ExplicitLeft = 6
-            ExplicitTop = 45
             ColWidths = (
               64
               64
@@ -461,8 +447,6 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
             BevelKind = bkFlat
             BevelOuter = bvNone
             TabOrder = 2
-            ExplicitLeft = 6
-            ExplicitTop = 534
             object Label1: TLabel
               Left = 10
               Top = 7
@@ -513,8 +497,6 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
           BevelKind = bkTile
           BevelOuter = bvNone
           TabOrder = 0
-          ExplicitTop = 37
-          ExplicitHeight = 543
           object GridPanel1: TGridPanel
             Left = 0
             Top = 0
@@ -548,7 +530,6 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
                 SizeStyle = ssAuto
               end>
             TabOrder = 0
-            ExplicitHeight = 539
             object Panel11: TPanel
               Left = 0
               Top = 0
@@ -559,7 +540,6 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
               BevelEdges = [beRight, beBottom]
               BevelOuter = bvNone
               TabOrder = 0
-              ExplicitHeight = 539
               object Panel12: TPanel
                 Left = 0
                 Top = 0
@@ -570,8 +550,6 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
                 BevelKind = bkFlat
                 BevelOuter = bvNone
                 TabOrder = 0
-                ExplicitLeft = -4
-                ExplicitTop = -6
                 object Label2: TLabel
                   Left = 10
                   Top = 9
@@ -609,10 +587,15 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
                 Align = alClient
                 BevelEdges = [beTop]
                 BorderStyle = bsNone
+                Font.Charset = 254
+                Font.Color = clWindowText
+                Font.Height = -15
+                Font.Name = #23435#20307
+                Font.Style = []
+                ParentFont = False
                 ScrollBars = ssVertical
                 TabOrder = 1
-                ExplicitLeft = -4
-                ExplicitHeight = 492
+                Zoom = 100
               end
             end
             object Panel13: TPanel
@@ -626,7 +609,6 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
               BevelKind = bkFlat
               BevelOuter = bvNone
               TabOrder = 1
-              ExplicitHeight = 539
               object Panel14: TPanel
                 Left = 0
                 Top = 0
@@ -637,8 +619,6 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
                 BevelKind = bkFlat
                 BevelOuter = bvNone
                 TabOrder = 0
-                ExplicitLeft = 4
-                ExplicitTop = -6
                 object Label8: TLabel
                   Left = 16
                   Top = 10
@@ -687,10 +667,15 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
                 Align = alClient
                 BevelEdges = [beTop]
                 BorderStyle = bsNone
+                Font.Charset = 254
+                Font.Color = clWindowText
+                Font.Height = -15
+                Font.Name = #23435#20307
+                Font.Style = []
+                ParentFont = False
                 ScrollBars = ssVertical
                 TabOrder = 1
-                ExplicitLeft = 4
-                ExplicitHeight = 533
+                Zoom = 100
               end
             end
           end
@@ -736,7 +721,6 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
           BevelKind = bkFlat
           BevelOuter = bvNone
           TabOrder = 0
-          ExplicitHeight = 543
           object memLog: TMemo
             Left = 0
             Top = 0
@@ -746,7 +730,6 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
             BevelOuter = bvSpace
             BorderStyle = bsNone
             TabOrder = 0
-            ExplicitHeight = 539
           end
         end
         object Panel15: TPanel
@@ -759,6 +742,103 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
           BevelKind = bkFlat
           BevelOuter = bvNone
           TabOrder = 1
+        end
+      end
+      object tab_server: TTabSheet
+        Caption = #26381#21153#37197#32622#31649#29702
+        ImageIndex = 3
+        object Panel18: TPanel
+          Left = 0
+          Top = 41
+          Width = 1372
+          Height = 531
+          Align = alClient
+          BevelEdges = [beLeft, beTop, beRight]
+          BevelKind = bkFlat
+          BevelOuter = bvNone
+          TabOrder = 0
+        end
+        object Panel19: TPanel
+          Left = 0
+          Top = 0
+          Width = 1372
+          Height = 41
+          Align = alTop
+          BevelEdges = [beLeft, beTop, beRight]
+          BevelKind = bkFlat
+          BevelOuter = bvNone
+          TabOrder = 1
+          object Panel20: TPanel
+            Left = 0
+            Top = 0
+            Width = 385
+            Height = 39
+            Align = alLeft
+            BevelEdges = [beRight]
+            BevelOuter = bvNone
+            TabOrder = 0
+            object Label11: TLabel
+              Left = 12
+              Top = 12
+              Width = 75
+              Height = 15
+              Caption = #31995#32479#26381#21153#65306
+            end
+            object cmb_app: TComboBox
+              Left = 93
+              Top = 7
+              Width = 260
+              Height = 23
+              BevelEdges = [beLeft, beBottom]
+              BevelInner = bvNone
+              BevelKind = bkFlat
+              BevelOuter = bvRaised
+              TabOrder = 0
+              OnChange = cmb_appChange
+            end
+          end
+          object FlowPanel1: TFlowPanel
+            AlignWithMargins = True
+            Left = 388
+            Top = 3
+            Width = 977
+            Height = 33
+            Align = alClient
+            BevelOuter = bvNone
+            TabOrder = 1
+            object sbtn_1: TSpeedButton
+              Left = 0
+              Top = 0
+              Width = 228
+              Height = 33
+              Align = alLeft
+              Visible = False
+            end
+            object spbtn_2: TSpeedButton
+              Left = 228
+              Top = 0
+              Width = 245
+              Height = 33
+              Align = alLeft
+              Visible = False
+            end
+            object sbtn_3: TSpeedButton
+              Left = 473
+              Top = 0
+              Width = 224
+              Height = 33
+              Align = alLeft
+              Visible = False
+            end
+            object sbtn_4: TSpeedButton
+              Left = 697
+              Top = 0
+              Width = 240
+              Height = 33
+              Align = alLeft
+              Visible = False
+            end
+          end
         end
       end
     end
@@ -971,36 +1051,43 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
       item
         CollectionIndex = 0
         CollectionName = #36864#20986' (1)'
+        Disabled = False
         Name = #36864#20986' (1)'
       end
       item
         CollectionIndex = 1
         CollectionName = #33756#21333
+        Disabled = False
         Name = #33756#21333
       end
       item
         CollectionIndex = 2
         CollectionName = 'open'
+        Disabled = False
         Name = 'open'
       end
       item
         CollectionIndex = 3
         CollectionName = 'download'
+        Disabled = False
         Name = 'download'
       end
       item
         CollectionIndex = 4
         CollectionName = 'save'
+        Disabled = False
         Name = 'save'
       end
       item
         CollectionIndex = 5
         CollectionName = 'wifi'#36830#25509
+        Disabled = False
         Name = 'wifi'#36830#25509
       end
       item
         CollectionIndex = 6
         CollectionName = 'w_wifi'#26410#36830#25509
+        Disabled = False
         Name = 'w_wifi'#26410#36830#25509
       end>
     Left = 824
