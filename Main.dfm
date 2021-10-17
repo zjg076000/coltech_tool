@@ -136,31 +136,39 @@ object frmmain: Tfrmmain
     Anchors = [akBottom]
     BevelOuter = bvNone
     Caption = 'Panel1'
+    Ctl3D = False
+    ParentCtl3D = False
     TabOrder = 1
     object PageControl1: TPageControl
-      Left = 0
-      Top = 0
-      Width = 1394
-      Height = 575
+      AlignWithMargins = True
+      Left = 3
+      Top = 3
+      Width = 1388
+      Height = 569
       ActivePage = tab_symbols
       Align = alClient
       Images = VirtualImageList1
       TabHeight = 30
       TabOrder = 0
       TabPosition = tpBottom
+      ExplicitLeft = 0
+      ExplicitTop = 6
+      ExplicitWidth = 1394
+      ExplicitHeight = 575
       object tab_symbols: TTabSheet
         Caption = '     '#26032#32929#26816#26597'       '
         ImageName = #26174#31034
         object Panel2: TPanel
           Left = 0
           Top = 0
-          Width = 1386
+          Width = 1380
           Height = 68
           Align = alTop
           BevelEdges = [beLeft, beTop, beRight]
           BevelKind = bkTile
           BevelOuter = bvNone
           TabOrder = 0
+          ExplicitWidth = 1386
           object Label5: TLabel
             Left = 19
             Top = 37
@@ -204,7 +212,7 @@ object frmmain: Tfrmmain
         object DBGrid2: TDBGrid
           Left = 0
           Top = 68
-          Width = 1386
+          Width = 1380
           Height = 256
           Align = alTop
           Ctl3D = True
@@ -221,13 +229,15 @@ object frmmain: Tfrmmain
         object Panel3: TPanel
           Left = 0
           Top = 465
-          Width = 1386
-          Height = 72
+          Width = 1380
+          Height = 66
           Align = alClient
           BevelEdges = [beLeft, beRight, beBottom]
           BevelKind = bkTile
           BevelOuter = bvNone
           TabOrder = 2
+          ExplicitWidth = 1386
+          ExplicitHeight = 72
           object Label7: TLabel
             Left = 20
             Top = 45
@@ -308,13 +318,14 @@ object frmmain: Tfrmmain
         object Panel4: TPanel
           Left = 0
           Top = 324
-          Width = 1386
+          Width = 1380
           Height = 141
           Align = alTop
           BevelEdges = [beLeft, beRight, beBottom]
           BevelKind = bkTile
           BevelOuter = bvNone
           TabOrder = 3
+          ExplicitWidth = 1386
           object spbtn_BackSymbols: TSpeedButton
             Left = 430
             Top = 27
@@ -436,8 +447,8 @@ object frmmain: Tfrmmain
         object GrdTel: TDBGrid
           Left = 0
           Top = 113
-          Width = 1386
-          Height = 424
+          Width = 1380
+          Height = 418
           Align = alClient
           DataSource = Dso_Tel
           ReadOnly = True
@@ -494,13 +505,14 @@ object frmmain: Tfrmmain
         object Panel5: TPanel
           Left = 0
           Top = 0
-          Width = 1386
+          Width = 1380
           Height = 113
           Align = alTop
           BevelEdges = [beLeft, beTop, beRight]
           BevelKind = bkTile
           BevelOuter = bvNone
           TabOrder = 1
+          ExplicitWidth = 1386
           object Label12: TLabel
             Left = 19
             Top = 37
@@ -567,13 +579,14 @@ object frmmain: Tfrmmain
         object Panel6: TPanel
           Left = 0
           Top = 0
-          Width = 1386
+          Width = 1380
           Height = 114
           Align = alTop
           BevelEdges = [beLeft, beTop, beRight]
           BevelKind = bkTile
           BevelOuter = bvNone
           TabOrder = 0
+          ExplicitWidth = 1386
           object sptn_change: TSpeedButton
             Left = 261
             Top = 34
@@ -677,7 +690,7 @@ object frmmain: Tfrmmain
             Left = 110
             Top = 61
             Width = 59
-            Height = 23
+            Height = 21
             ReadOnly = True
             TabOrder = 1
             Value = 25.000000000000000000
@@ -696,8 +709,8 @@ object frmmain: Tfrmmain
         object GridPanel1: TGridPanel
           Left = 0
           Top = 114
-          Width = 1386
-          Height = 423
+          Width = 1380
+          Height = 417
           Align = alClient
           BevelKind = bkTile
           BevelOuter = bvNone
@@ -728,26 +741,31 @@ object frmmain: Tfrmmain
               SizeStyle = ssAuto
             end>
           TabOrder = 1
+          ExplicitWidth = 1386
+          ExplicitHeight = 423
           object Panel7: TPanel
             Left = 0
             Top = 0
-            Width = 691
-            Height = 419
+            Width = 688
+            Height = 413
             Align = alClient
             BevelEdges = [beRight, beBottom]
             BevelKind = bkTile
             BevelOuter = bvNone
             TabOrder = 0
+            ExplicitWidth = 691
+            ExplicitHeight = 419
             object Panel8: TPanel
               Left = 0
               Top = 0
-              Width = 689
+              Width = 686
               Height = 41
               Align = alTop
               BevelEdges = [beBottom]
               BevelKind = bkTile
               BevelOuter = bvNone
               TabOrder = 0
+              ExplicitWidth = 689
               object Label19: TLabel
                 Left = 10
                 Top = 11
@@ -759,8 +777,8 @@ object frmmain: Tfrmmain
             object DBGrid1: TDBGrid
               Left = 0
               Top = 41
-              Width = 689
-              Height = 376
+              Width = 686
+              Height = 370
               Align = alClient
               BorderStyle = bsNone
               DataSource = Dso_trade_product_config
@@ -793,25 +811,29 @@ object frmmain: Tfrmmain
             end
           end
           object Panel9: TPanel
-            Left = 691
+            Left = 688
             Top = 0
-            Width = 691
-            Height = 419
+            Width = 688
+            Height = 413
             Align = alClient
             BevelEdges = [beRight, beBottom]
             BevelKind = bkTile
             BevelOuter = bvNone
             TabOrder = 1
+            ExplicitLeft = 691
+            ExplicitWidth = 691
+            ExplicitHeight = 419
             object Panel10: TPanel
               Left = 0
               Top = 0
-              Width = 689
+              Width = 686
               Height = 41
               Align = alTop
               BevelEdges = [beLeft, beBottom]
               BevelKind = bkTile
               BevelOuter = bvNone
               TabOrder = 0
+              ExplicitWidth = 689
               object Label20: TLabel
                 Left = 15
                 Top = 11
@@ -823,8 +845,8 @@ object frmmain: Tfrmmain
             object DBGrid3: TDBGrid
               Left = 0
               Top = 41
-              Width = 689
-              Height = 376
+              Width = 686
+              Height = 370
               Align = alClient
               BorderStyle = bsNone
               DataSource = Dso_trade_product_config_real
@@ -865,8 +887,8 @@ object frmmain: Tfrmmain
         object DBGrid4: TDBGrid
           Left = 0
           Top = 113
-          Width = 1386
-          Height = 424
+          Width = 1380
+          Height = 418
           Align = alClient
           DataSource = Dso_Tel
           ReadOnly = True
@@ -923,13 +945,14 @@ object frmmain: Tfrmmain
         object Panel11: TPanel
           Left = 0
           Top = 0
-          Width = 1386
+          Width = 1380
           Height = 113
           Align = alTop
           BevelEdges = [beLeft, beTop, beRight]
           BevelKind = bkTile
           BevelOuter = bvNone
           TabOrder = 1
+          ExplicitWidth = 1386
           object Label29: TLabel
             Left = 19
             Top = 21
@@ -983,13 +1006,14 @@ object frmmain: Tfrmmain
         object Panel12: TPanel
           Left = 0
           Top = 0
-          Width = 1386
+          Width = 1380
           Height = 121
           Align = alTop
           BevelEdges = [beLeft, beTop, beRight]
           BevelKind = bkTile
           BevelOuter = bvNone
           TabOrder = 0
+          ExplicitWidth = 1386
           object Label33: TLabel
             Left = 34
             Top = 20
@@ -1048,7 +1072,7 @@ object frmmain: Tfrmmain
             Left = 88
             Top = 66
             Width = 59
-            Height = 23
+            Height = 21
             ReadOnly = True
             TabOrder = 1
             Value = 103.000000000000000000
@@ -1067,8 +1091,8 @@ object frmmain: Tfrmmain
         object GridPanel2: TGridPanel
           Left = 0
           Top = 121
-          Width = 1386
-          Height = 416
+          Width = 1380
+          Height = 410
           Align = alClient
           BevelKind = bkTile
           BevelOuter = bvNone
@@ -1099,26 +1123,31 @@ object frmmain: Tfrmmain
               SizeStyle = ssAuto
             end>
           TabOrder = 1
+          ExplicitWidth = 1386
+          ExplicitHeight = 416
           object Panel13: TPanel
             Left = 0
             Top = 0
-            Width = 691
-            Height = 412
+            Width = 688
+            Height = 406
             Align = alClient
             BevelEdges = [beRight, beBottom]
             BevelKind = bkTile
             BevelOuter = bvNone
             TabOrder = 0
+            ExplicitWidth = 691
+            ExplicitHeight = 412
             object Panel14: TPanel
               Left = 0
               Top = 0
-              Width = 689
+              Width = 686
               Height = 41
               Align = alTop
               BevelEdges = [beBottom]
               BevelKind = bkTile
               BevelOuter = bvNone
               TabOrder = 0
+              ExplicitWidth = 689
               object Label37: TLabel
                 Left = 10
                 Top = 11
@@ -1130,8 +1159,8 @@ object frmmain: Tfrmmain
             object DBGrid5: TDBGrid
               Left = 0
               Top = 41
-              Width = 689
-              Height = 369
+              Width = 686
+              Height = 363
               Align = alClient
               BorderStyle = bsNone
               DataSource = Dso_trade_product_config
@@ -1164,25 +1193,29 @@ object frmmain: Tfrmmain
             end
           end
           object Panel15: TPanel
-            Left = 691
+            Left = 688
             Top = 0
-            Width = 691
-            Height = 412
+            Width = 688
+            Height = 406
             Align = alClient
             BevelEdges = [beRight, beBottom]
             BevelKind = bkTile
             BevelOuter = bvNone
             TabOrder = 1
+            ExplicitLeft = 691
+            ExplicitWidth = 691
+            ExplicitHeight = 412
             object Panel16: TPanel
               Left = 0
               Top = 0
-              Width = 689
+              Width = 686
               Height = 41
               Align = alTop
               BevelEdges = [beLeft, beBottom]
               BevelKind = bkTile
               BevelOuter = bvNone
               TabOrder = 0
+              ExplicitWidth = 689
               object Label38: TLabel
                 Left = 15
                 Top = 11
@@ -1194,8 +1227,8 @@ object frmmain: Tfrmmain
             object DBGrid6: TDBGrid
               Left = 0
               Top = 41
-              Width = 689
-              Height = 369
+              Width = 686
+              Height = 363
               Align = alClient
               BorderStyle = bsNone
               DataSource = Dso_trade_product_config_real
@@ -1236,13 +1269,14 @@ object frmmain: Tfrmmain
         object Panel17: TPanel
           Left = 0
           Top = 0
-          Width = 1386
+          Width = 1380
           Height = 121
           Align = alTop
           BevelEdges = [beLeft, beTop, beRight]
           BevelKind = bkTile
           BevelOuter = bvNone
           TabOrder = 0
+          ExplicitWidth = 1386
           object Label39: TLabel
             Left = 34
             Top = 20
@@ -1301,7 +1335,7 @@ object frmmain: Tfrmmain
             Left = 88
             Top = 66
             Width = 59
-            Height = 23
+            Height = 21
             ReadOnly = True
             TabOrder = 1
             Value = 103.000000000000000000
@@ -1363,6 +1397,8 @@ object frmmain: Tfrmmain
       ButtonHeight = 26
       ButtonWidth = 35
       Caption = 'ToolBar1'
+      EdgeInner = esNone
+      EdgeOuter = esNone
       Images = VirtualImageList1
       List = True
       TabOrder = 1

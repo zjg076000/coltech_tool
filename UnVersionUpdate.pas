@@ -10,22 +10,15 @@ uses
   DateUtils,IOUtils, System.Win.Registry,
   tgputtylib,tgputtysftp, Vcl.ComCtrls, UBaseForm, Vcl.ExtCtrls, Vcl.WinXCtrls,
   System.ImageList, Vcl.ImgList, Vcl.VirtualImageList, Vcl.BaseImageCollection,
-  Vcl.ImageCollection, Vcl.Buttons, Vcl.Menus, RegularExpressions;
+  Vcl.ImageCollection, Vcl.Buttons, Vcl.Menus, RegularExpressions, RzCmboBx,
+  RzGroupBar, Vcl.WinXPanels;
 
 
 
 
 type
   TFrmVersionUpdate = class(TFrmBaseForm)
-    SplitView: TSplitView;
-    SpeedButton1: TSpeedButton;
     Panel2: TPanel;
-    Panel4: TPanel;
-    Panel5: TPanel;
-    Panel6: TPanel;
-    DriveComboBox1: TDriveComboBox;
-    DirectoryListBox1: TDirectoryListBox;
-    FileListBox1: TFileListBox;
     PageControl1: TPageControl;
     TabSheet1: TTabSheet;
     TabSheet2: TTabSheet;
@@ -70,12 +63,10 @@ type
     edUserName: TEdit;
     Label6: TLabel;
     edPassword: TEdit;
-    Bevel1: TBevel;
     PopupMenu1: TPopupMenu;
     H51: TMenuItem;
     HOUHAI1: TMenuItem;
     N1: TMenuItem;
-    Button1: TButton;
     Panel17: TPanel;
     Label1: TLabel;
     edt_downloadPath: TEdit;
@@ -94,15 +85,82 @@ type
     edt_remotepath: TEdit;
     tab_server: TTabSheet;
     Panel18: TPanel;
+    SplitView1: TSplitView;
+    Panel21: TPanel;
+    GridPanel2: TGridPanel;
+    Panel22: TPanel;
+    Panel23: TPanel;
+    Label12: TLabel;
+    edtConfig_Path: TEdit;
+    edtDownLoadFile: TRichEdit;
+    Panel24: TPanel;
+    Panel25: TPanel;
+    Label13: TLabel;
+    btnOpenFile2: TSpeedButton;
+    btnUpdateUpLoad: TSpeedButton;
+    edtUpatePath: TEdit;
+    edtUpdateFile: TRichEdit;
+    Panel4: TPanel;
+    Panel5: TPanel;
+    Panel6: TPanel;
+    SplitView: TSplitView;
+    Panel26: TPanel;
+    DriveComboBox1: TDriveComboBox;
+    Panel27: TPanel;
+    FileListBox1: TFileListBox;
+    Panel28: TPanel;
+    DirectoryListBox1: TDirectoryListBox;
+    SpeedButton1: TSpeedButton;
     Panel19: TPanel;
+    SpeedButton7: TSpeedButton;
+    VirtualImageList2: TVirtualImageList;
+    ImageCollection2: TImageCollection;
+    Bevel1: TBevel;
+    rbtn_h5: TRadioButton;
+    rbtn_houtai: TRadioButton;
+    CardPanel1: TCardPanel;
+    Card1: TCard;
+    Card2: TCard;
+    RzGroupBar1: TRzGroupBar;
+    grp_config: TRzGroup;
+    grp_maintenance_sys: TRzGroup;
+    grp_service: TRzGroup;
+    grp_tomcat: TRzGroup;
+    grp_dwpay: TRzGroup;
+    grp_commonpay: TRzGroup;
+    RzGroupBar2: TRzGroupBar;
+    RzGroup3: TRzGroup;
+    TabSheet4: TTabSheet;
     Panel20: TPanel;
-    cmb_app: TComboBox;
+    SpeedButton2: TSpeedButton;
+    Panel29: TPanel;
+    SplitView2: TSplitView;
+    CardPanel2: TCardPanel;
+    Card3: TCard;
+    RzGroupBar3: TRzGroupBar;
+    RzGroup1: TRzGroup;
+    RzGroup2: TRzGroup;
+    RzGroup4: TRzGroup;
+    RzGroup5: TRzGroup;
+    RzGroup6: TRzGroup;
+    RzGroup7: TRzGroup;
+    Card4: TCard;
+    RzGroupBar4: TRzGroupBar;
+    RzGroup8: TRzGroup;
+    Panel30: TPanel;
+    GridPanel3: TGridPanel;
+    Panel31: TPanel;
+    Panel32: TPanel;
     Label11: TLabel;
-    FlowPanel1: TFlowPanel;
-    sbtn_1: TSpeedButton;
-    spbtn_2: TSpeedButton;
-    sbtn_3: TSpeedButton;
-    sbtn_4: TSpeedButton;
+    Edit1: TEdit;
+    RichEdit1: TRichEdit;
+    Panel33: TPanel;
+    Panel34: TPanel;
+    Label14: TLabel;
+    SpeedButton4: TSpeedButton;
+    SpeedButton5: TSpeedButton;
+    Edit2: TEdit;
+    RichEdit2: TRichEdit;
     function ListingCallback(const names:Pfxp_names):Boolean;
     procedure SpeedButton1Click(Sender: TObject);
     procedure btnOpenFileClick(Sender: TObject);
@@ -133,15 +191,28 @@ type
     procedure btn_saveClick(Sender: TObject);
     procedure btn_selectdowndirClick(Sender: TObject);
     procedure cmb_appChange(Sender: TObject);
+    procedure SpeedButton6Click(Sender: TObject);
+
+    procedure grp_configItems0Click(Sender: TObject);
+    procedure btnOpenFile2Click(Sender: TObject);
+    procedure btnUpdateUpLoadClick(Sender: TObject);
+    procedure grpDemosItems0Click(Sender: TObject);
+    procedure rbtn_houtaiClick(Sender: TObject);
+    procedure rbtn_h5Click(Sender: TObject);
   private
     PSFTP: TTGPuttySFTP;
     FTotalToCopy: Int64;
+    IsConnected:boolean;
     FInLoadSettings: Boolean;
     procedure SaveSettings;
     procedure LoadSettings;
     procedure GetListing;
+
+
+    procedure  proc_remoteConfigFile(selection,key:string);
+  //  function Fun_remoteLinuxPath(EdtStr: string): string;
   public
-    { Public declarations }
+    remotePath,remoteFileName: UnicodeString;
   end;
 
 var
@@ -152,7 +223,29 @@ implementation
 {$R *.dfm}
 
 uses Main;
+function Fun_remoteLinuxPath(EdtStr: string): string;
+var
+  I: Integer;
+  strwhere: string;
+begin
 
+  var
+  var_array := TRegEx.Split(EdtStr, '/');
+
+  var
+  num := length(var_array);
+
+  for I := 0 to num - 1 do
+  begin
+
+    if I = 0 then
+      strwhere := '/' +  var_array[I]
+    else
+      strwhere := strwhere + '/' + var_array[I]+'/';
+
+  end;
+  result := strwhere;
+end;
 procedure TFrmVersionUpdate.btConnectClick(Sender: TObject);
 begin
   SaveSettings;
@@ -177,7 +270,7 @@ begin
 
     edFolderPath.Text := Utf8ToString(WorkDir);
   end;
-
+  IsConnected:=true;
   GetListing;
 
 end;
@@ -305,6 +398,16 @@ begin
   end;
 end;
 
+procedure TFrmVersionUpdate.btnOpenFile2Click(Sender: TObject);
+begin
+  inherited;
+ if OpenDialog1.Execute then
+  begin
+    edtUpdateFile.Lines.LoadFromFile(OpenDialog1.FileName);
+    edtUpatePath.text:=OpenDialog1.FileName;
+  end;
+end;
+
 procedure TFrmVersionUpdate.btnOpenFileClick(Sender: TObject);
 begin
   inherited;
@@ -322,6 +425,42 @@ begin
   begin
     edKeyFile.Text := FileOpenDialog1.FileName;
   end;
+end;
+
+procedure TFrmVersionUpdate.btnUpdateUpLoadClick(Sender: TObject);
+var
+
+  UploadStream: TStream;
+  LocalPath,APath,locateFilename: UnicodeString;
+
+ begin
+
+    //1. 保存更改的文件的内容
+      edtUpdateFile.Lines.SaveToFile(edtUpatePath.text);
+
+    //2. 定位要上传远程的路径
+      PSFTP.ChangeDir(Utf8Encode(remotePath));
+     //3. 创建要文件的文件
+       UploadStream := TFileStream.Create(edtUpatePath.text, fmOpenRead);
+      try
+//        FTotalToCopy := UploadStream.Size;
+//        ProgressBar1.Min := 0;
+//        ProgressBar1.Max := FTotalToCopy div 1024;
+//        ProgressBar1.Position := 0;
+//        ProgressBar1.Visible := true;
+//        Application.ProcessMessages;
+        PSFTP.UploadStream(Utf8Encode(remoteFileName),
+          UploadStream, false);
+//        PSFTP.SetModifiedDate(Utf8Encode(FileListBox1.Items[i]),
+//          LDateTime.TimeStamp, false);
+//        GetListing;
+        showmessage('文件上传成功');
+      finally
+        FreeAndNil(UploadStream);
+        ProgressBar1.Visible := false;
+       // showmessage('文件上传成功');
+      end;
+    ;
 end;
 
 procedure TFrmVersionUpdate.btn_saveClick(Sender: TObject);
@@ -396,7 +535,7 @@ procedure TFrmVersionUpdate.cmb_appChange(Sender: TObject);
 var i, i_count:integer;
 begin
  // inherited;
-  var edt:=tedit.create(Self);
+ { var edt:=tedit.create(Self);
   frmmain.proc_readini_pub(frmmain.appPath,cmb_app.text,'configfile','',edt);
    var appstr:=trim(edt.text);
    var var_array := TRegEx.Split(appstr, ',');
@@ -422,7 +561,7 @@ begin
 
 
 
-  end;
+  end;      }
 
 end;
 
@@ -457,6 +596,64 @@ begin
   if sgRemoteFiles.RowCount > 1 then
     sgRemoteFiles.FixedRows := 1;
   sgRemoteFiles.FixedCols := 0;
+end;
+
+
+procedure  TFrmVersionUpdate.proc_remoteConfigFile(selection,key:string);
+var
+  DownloadStream: TStream;
+  LocalPath,APath,locateFilename: UnicodeString;
+
+ begin
+
+     //取得远程linux 路径和文件名
+     frmmain.proc_readini_pub(frmmain.appPath,selection,key,'',edtConfig_Path);
+     APath :=trim(edtConfig_Path.text) ;
+     var var_array := TRegEx.Split(APath, ',');
+     remotePath:=var_array[0];
+     remoteFileName:=var_array[1];
+     edtConfig_Path.text:=remotePath+remoteFileName;
+     //取得本地的备份路径
+     var edtLocal:=tedit.create(self);
+     frmmain.proc_readini_pub(frmmain.appPath,'server','backupPath','',edtLocal);
+      LocalPath:=edtLocal.text;
+      locateFilename:=LocalPath+remoteFileName;
+
+     PSFTP.ChangeDir(Utf8Encode(remotePath));
+
+
+     DownloadStream := TFileStream.Create(locateFilename, fmCreate);
+ try
+//        FTotalToCopy := StrToInt64Def(sgRemoteFiles.Cells[2, i], 0);
+//        ProgressBar1.Min := 0;
+//        ProgressBar1.Max := FTotalToCopy div 1024;
+//        ProgressBar1.Position := 0;
+//        ProgressBar1.Visible := true;
+//        Application.ProcessMessages;
+         PSFTP.DownloadStream(Utf8Encode(remoteFileName),
+          DownloadStream, false);
+
+      //  edt_downloadPath.Text:=APath;
+     //   edt_load.Text:=APath;
+     //   FileListBox1.Update;
+      finally
+        ProgressBar1.Visible := false;
+        FreeAndNil(DownloadStream);
+            edtDownLoadFile.Lines.LoadFromFile(locateFilename);
+      end;
+
+     //    edtDownLoadFile.Lines.LoadFromFile(locateFilename);
+
+end;
+
+procedure TFrmVersionUpdate.grpDemosItems0Click(Sender: TObject);
+begin
+    proc_remoteConfigFile('maintenance_sys', grp_maintenance_sys.Items[grp_config.ItemIndex].Caption);
+end;
+
+procedure TFrmVersionUpdate.grp_configItems0Click(Sender: TObject);
+begin
+   proc_remoteConfigFile('config', grp_config.Items[grp_config.ItemIndex].Caption);
 end;
 
 function TFrmVersionUpdate.ListingCallback(const names: Pfxp_names): Boolean;
@@ -522,6 +719,18 @@ begin
   Result := true;
 end;
 
+procedure TFrmVersionUpdate.rbtn_h5Click(Sender: TObject);
+begin
+  inherited;
+   cardpanel1.ActiveCardIndex:=1
+end;
+
+procedure TFrmVersionUpdate.rbtn_houtaiClick(Sender: TObject);
+begin
+  inherited;
+  cardpanel1.ActiveCardIndex:=0;
+end;
+
 procedure TFrmVersionUpdate.SaveSettings;
 var
   Reg: TRegistry;
@@ -564,8 +773,15 @@ end;
 
 procedure TFrmVersionUpdate.SpeedButton1Click(Sender: TObject);
 begin
-
+  panel6.Visible:= not panel6.Visible;
   SplitView.Opened := not SplitView.Opened;
+end;
+
+procedure TFrmVersionUpdate.SpeedButton6Click(Sender: TObject);
+begin
+  inherited;
+ //  panel6.Visible:= not panel6.Visible;
+  SplitView1.Opened := not SplitView1.Opened;
 end;
 
 procedure TFrmVersionUpdate.btnLoadClick(Sender: TObject);
@@ -605,7 +821,7 @@ begin
   ProgressBar1.Visible := false;
   memLog.Lines.Add('Library version: ' +string(PSFTP.LibVersion));
 
-  frmmain.FunInitComItemValue(cmb_App);
+ // frmmain.FunInitComItemValue(cmb_App);
 end;
 
 end.

@@ -455,6 +455,7 @@ procedure Tfrmmain.N11Click(Sender: TObject);
 begin
   ShowDockForm(TFrmVersionUpdate, PageControl1);
   PageControl1.ActivePage.ImageIndex:=TMenuItem(Sender).ImageIndex;
+   pnlConnDef.Visible := False;
 end;
 
 procedure Tfrmmain.N4Click(Sender: TObject);
