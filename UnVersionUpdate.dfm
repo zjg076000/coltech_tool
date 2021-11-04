@@ -607,7 +607,7 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
                 Align = alClient
                 BevelEdges = [beTop]
                 BorderStyle = bsNone
-                Font.Charset = GB2312_CHARSET
+                Font.Charset = 254
                 Font.Color = clWindowText
                 Font.Height = -15
                 Font.Name = #23435#20307
@@ -687,7 +687,7 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
                 Align = alClient
                 BevelEdges = [beTop]
                 BorderStyle = bsNone
-                Font.Charset = GB2312_CHARSET
+                Font.Charset = 254
                 Font.Color = clWindowText
                 Font.Height = -15
                 Font.Name = #23435#20307
@@ -728,14 +728,6 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
             TabOrder = 0
           end
         end
-        object Panel5: TPanel
-          Left = 680
-          Top = 272
-          Width = 185
-          Height = 41
-          Caption = 'Panel5'
-          TabOrder = 2
-        end
       end
       object TabSheet3: TTabSheet
         Caption = #25805#20316#26085#24535
@@ -770,15 +762,6 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
           BevelKind = bkFlat
           BevelOuter = bvNone
           TabOrder = 1
-          ExplicitTop = -4
-        end
-        object Panel4: TPanel
-          Left = 672
-          Top = 264
-          Width = 185
-          Height = 41
-          Caption = 'Panel4'
-          TabOrder = 2
         end
       end
       object tab_server: TTabSheet
@@ -806,8 +789,6 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
             Placement = svpLeft
             TabOrder = 0
             UseAnimation = False
-            ExplicitLeft = 4
-            ExplicitTop = 4
             object CardPanel1: TCardPanel
               Left = 0
               Top = 0
@@ -818,10 +799,6 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
               BevelOuter = bvNone
               Caption = 'CardPanel1'
               TabOrder = 0
-              ExplicitLeft = 120
-              ExplicitTop = 80
-              ExplicitWidth = 300
-              ExplicitHeight = 200
               object Card1: TCard
                 Left = 0
                 Top = 0
@@ -830,8 +807,6 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
                 Caption = 'Card1'
                 CardIndex = 0
                 TabOrder = 0
-                ExplicitWidth = 185
-                ExplicitHeight = 41
                 object RzGroupBar1: TRzGroupBar
                   Left = 0
                   Top = 0
@@ -851,58 +826,77 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
                   ParentFont = False
                   TabOrder = 0
                   object grp_config: TRzGroup
+                    CaptionHeight = 25
                     Items = <
                       item
                         Caption = 'wpmanager'
-                        ImageIndex = 2
+                        ImageIndex = 7
+                        OnClick = grp_configItems0Click
                       end
                       item
                         Caption = 'finance'
+                        ImageIndex = 7
+                        OnClick = grp_configItems0Click
                       end
                       item
                         Caption = 'customer'
+                        OnClick = grp_configItems0Click
                       end
                       item
                         Caption = 'application'
+                        OnClick = grp_configItems0Click
                       end
                       item
                         Caption = 'dc-center-manager'
+                        OnClick = grp_configItems0Click
                       end
                       item
                         Caption = 'funding_trade_center'
+                        OnClick = grp_configItems0Click
                       end
                       item
                         Caption = 'news'
+                        OnClick = grp_configItems0Click
                       end
                       item
                         Caption = 'super-manager'
+                        OnClick = grp_configItems0Click
                       end
                       item
                         Caption = 'super'
+                        OnClick = grp_configItems0Click
                       end
                       item
                         Caption = 'sms'
+                        OnClick = grp_configItems0Click
                       end
                       item
                         Caption = 'funding_statiestic_enter'
+                        OnClick = grp_configItems0Click
                       end
                       item
                         Caption = 'dc-cent-service'
+                        OnClick = grp_configItems0Click
                       end
                       item
                         Caption = 'openaccount-web'
+                        OnClick = grp_configItems0Click
                       end
                       item
                         Caption = 'openaccount-sync'
+                        OnClick = grp_configItems0Click
                       end
                       item
                         Caption = 'openaccount-manager'
                         Selected = True
+                        OnClick = grp_configItems0Click
                       end>
+                    ItemHeight = 25
+                    ItemIndent = 25
                     Opened = True
-                    OpenedHeight = 327
+                    OpenedHeight = 408
                     DividerVisible = True
-                    SmallImages = VirtualImageList2
+                    SmallImages = VirtualImageList1
                     Caption = 'config'
                     ParentColor = False
                   end
@@ -937,12 +931,45 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
                     CaptionColorStop = 11855600
                     Items = <
                       item
-                        Caption = 'Classic'
+                        Caption = 'wpmanage.bootstrap'
                         ImageIndex = 0
                         Tag = 1
+                      end
+                      item
+                        Caption = '-'
+                      end
+                      item
+                        Caption = 'manager-gateway.bootstrap'
+                      end
+                      item
+                        Caption = 'dc-center-service.bootstrap'
+                      end
+                      item
+                        Caption = '-'
+                      end
+                      item
+                        Caption = 'dc-center-manager'
+                      end
+                      item
+                        Caption = 'dc-center-manager.bootstrap'
+                      end
+                      item
+                        Caption = '-'
+                      end
+                      item
+                        Caption = 'customer.bootstrap'
+                      end
+                      item
+                        Caption = '-'
+                      end
+                      item
+                        Caption = 'finance'
+                      end
+                      item
+                        Caption = 'finance.bootstrap'
                       end>
-                    Opened = False
-                    OpenedHeight = 47
+                    Opened = True
+                    OpenedHeight = 267
                     DividerVisible = False
                     ShowItemSelection = True
                     Caption = 'service'
@@ -958,19 +985,28 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
                     CaptionColorStop = 11855600
                     Items = <
                       item
-                        Caption = 'gbsCategoryView'
+                        Caption = 'dwpay-manager.webconfig'
                         ImageIndex = 9
                       end
                       item
-                        Caption = 'gbsTaskList'
+                        Caption = 'dwpay-manager.dubbo'
                         ImageIndex = 13
                       end
                       item
-                        Caption = 'gbsOutlook'
+                        Caption = '-'
+                      end
+                      item
+                        Caption = 'dwpay.webconfig'
                         ImageIndex = 11
+                      end
+                      item
+                        Caption = 'dwpay.sysconfig'
+                      end
+                      item
+                        Caption = 'dwpay.dubbo'
                       end>
-                    Opened = False
-                    OpenedHeight = 87
+                    Opened = True
+                    OpenedHeight = 147
                     DividerVisible = False
                     Caption = 'tomcat'
                     Font.Charset = DEFAULT_CHARSET
@@ -986,21 +1022,46 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
                     CaptionColorStop = 11855600
                     Items = <
                       item
+                        Caption = 'dwpay-channel.sysconfig'
                       end
                       item
-                        Caption = 'Show Text Labels'
+                        Caption = 'dwpay-channel.rmq-config'
                         ImageIndex = 22
                       end
                       item
-                        Caption = 'No Text Labels'
+                        Caption = 'dwpay-channel.dubbo'
                         ImageIndex = 26
                       end
                       item
-                        Caption = 'Selective Text on Right'
+                        Caption = '-'
+                      end
+                      item
+                        Caption = 'dwpay-service.dubbo'
                         ImageIndex = 24
+                      end
+                      item
+                        Caption = 'dwpay-service.jdbc'
+                      end
+                      item
+                        Caption = 'dwpay-service.redis'
+                      end
+                      item
+                        Caption = '-'
+                      end
+                      item
+                        Caption = 'dwpay-fundout-task.dubbo'
+                      end
+                      item
+                        Caption = '-'
+                      end
+                      item
+                        Caption = 'dwpay-reconciliation.webconfig'
+                      end
+                      item
+                        Caption = 'dwpay-reconciliation.dubbo'
                       end>
-                    Opened = False
-                    OpenedHeight = 107
+                    Opened = True
+                    OpenedHeight = 267
                     DividerVisible = False
                     Caption = 'dwpay'
                     Font.Charset = DEFAULT_CHARSET
@@ -1012,8 +1073,12 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
                     ParentFont = False
                   end
                   object grp_commonpay: TRzGroup
-                    Items = <>
+                    Items = <
+                      item
+                        Caption = 'application'
+                      end>
                     Opened = True
+                    OpenedHeight = 47
                     DividerVisible = False
                     Caption = 'commonpay'
                     ParentColor = False
@@ -1028,8 +1093,6 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
                 Caption = 'Card2'
                 CardIndex = 1
                 TabOrder = 1
-                ExplicitLeft = -4
-                ExplicitTop = 4
                 object RzGroupBar2: TRzGroupBar
                   Left = 0
                   Top = 0
@@ -1048,8 +1111,6 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
                   ParentColor = False
                   ParentFont = False
                   TabOrder = 0
-                  ExplicitLeft = 6
-                  ExplicitTop = 4
                   object RzGroup3: TRzGroup
                     CaptionColorStop = 11855600
                     Items = <
@@ -1163,7 +1224,7 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
                   Align = alClient
                   BevelEdges = [beTop]
                   BorderStyle = bsNone
-                  Font.Charset = GB2312_CHARSET
+                  Font.Charset = 254
                   Font.Color = clWindowText
                   Font.Height = -15
                   Font.Name = #23435#20307
@@ -1172,7 +1233,6 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
                   ScrollBars = ssVertical
                   TabOrder = 1
                   Zoom = 100
-                  ExplicitLeft = 4
                 end
               end
               object Panel24: TPanel
@@ -1244,7 +1304,7 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
                   Align = alClient
                   BevelEdges = [beTop]
                   BorderStyle = bsNone
-                  Font.Charset = GB2312_CHARSET
+                  Font.Charset = 254
                   Font.Color = clWindowText
                   Font.Height = -15
                   Font.Name = #23435#20307
@@ -1268,8 +1328,6 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
           BevelKind = bkFlat
           BevelOuter = bvNone
           TabOrder = 1
-          ExplicitLeft = 2
-          ExplicitTop = 2
           object SpeedButton7: TSpeedButton
             Left = 0
             Top = 0
@@ -1297,7 +1355,6 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
           BevelKind = bkFlat
           BevelOuter = bvNone
           TabOrder = 0
-          ExplicitTop = 8
           object SpeedButton2: TSpeedButton
             Left = 0
             Top = 0
@@ -1678,7 +1735,7 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
                   Align = alClient
                   BevelEdges = [beTop]
                   BorderStyle = bsNone
-                  Font.Charset = GB2312_CHARSET
+                  Font.Charset = 254
                   Font.Color = clWindowText
                   Font.Height = -15
                   Font.Name = #23435#20307
@@ -1758,7 +1815,7 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
                   Align = alClient
                   BevelEdges = [beTop]
                   BorderStyle = bsNone
-                  Font.Charset = GB2312_CHARSET
+                  Font.Charset = 254
                   Font.Color = clWindowText
                   Font.Height = -15
                   Font.Name = #23435#20307
@@ -1974,6 +2031,37 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
               9857931A8034F998AB7BACD149FBE7E38F01F8D56DD700D60CAC19F82719F809
               8C848230B13926E20000000049454E44AE426082}
           end>
+      end
+      item
+        Name = #31995#32479#37197#32622
+        SourceImages = <
+          item
+            Image.Data = {
+              89504E470D0A1A0A0000000D4948445200000020000000200806000000737A7A
+              F4000002B6494441545847C5978D4D554110850F15A8152815A0158815081500
+              15A815A815A01508150015001D600568075A81E6DBECBC9CB777FF6E7C899310
+              E4EECCECD9993367D73DFD67DB5BB9FFA9A4934ECC2F499792AE67F3AE017028
+              E97632F12B490F33BE6B007C92F43127BD6F247F9DBF7F9684FFD05A009E4A22
+              D94F3B890368C5FDA900A06D7CBF91448BB6AC9688CD29F5CBEC493FCF24BDB7
+              0ACC00B893746E7968C99B12442D919F34D0821C60612300ADD22F5A53267A21
+              E9314753FE1FB9159E90EFF8D5ECA232255F251D497A9E4F0F41C99BAC0440B9
+              DFE635CA4519E9E1971CCCBFF9D6335A873F15C39FD2FB0431A67C5F00702758
+              CEDF6151FE058906607C19E0312571B8AD0A80F42047EC7B99566CD273F5F602
+              06101B0094E45B8EA66730BE671015450C2ED053FA0FC97A466BDE650726EB22
+              38E0BD4F0B9D2CEE5BBA11477CCBFCA0E8C2510028478F4D3E54DAE07EBF33D9
+              D88C8A3DC9BB12C749DDA8149AC03484253F9F02927B2208F7AC4844A9192736
+              2769901292B206087EC32137FC0220B1EC9540D67480D30719CBF59AD4C6463D
+              A98E38A68B36347580535D997CAE01E0042BE3A2720B7E952D80A131F394CAE5
+              979346224A4A99BD052828FE35A5E43B875B5CD12D12C2504A550A8F9799B598
+              167C036C8D84CDB1A88DE1F1E04553D3FBD8009905248C2FAB57824033EE02C0
+              5A21625AF8612230CA0E07F8A9DDA6B50A24B9770EEC4A8AE9755C461D4D4A07
+              7870007E196DB4BA9761176B33D731C0E829A44B7D9BD8982B3984A7E59EDE95
+              BD07092387289517D31ABDEF614DEF82D9275999A8F79A7642F700A45BB7F528
+              A5CC21C7DFB3267091C4B37CF49CA705A3314CADEC3DCBE3E60AB19979964FD0
+              63DB657412F776004E44C889C6876A727A483BB22D211A39B3DEFBAFD9E68DF7
+              2F42340382B6B8EE138380F9A4D07BDA36E2C042886600ECDCE72F787BA821EC
+              98011F0000000049454E44AE426082}
+          end>
       end>
     Left = 677
     Top = 149
@@ -2021,7 +2109,15 @@ inherited FrmVersionUpdate: TFrmVersionUpdate
         CollectionName = 'w_wifi'#26410#36830#25509
         Disabled = False
         Name = 'w_wifi'#26410#36830#25509
+      end
+      item
+        CollectionIndex = 7
+        CollectionName = #31995#32479#37197#32622
+        Disabled = False
+        Name = #31995#32479#37197#32622
       end>
+    Width = 16
+    Height = 16
     Left = 824
     Top = 145
   end

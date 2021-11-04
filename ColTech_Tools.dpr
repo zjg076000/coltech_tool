@@ -15,14 +15,17 @@ uses
   UnWeekReport in 'UnWeekReport.pas' {FrmWeekReport},
   UnVersionUpdate in 'UnVersionUpdate.pas' {FrmVersionUpdate},
   tgputtylib in 'lib\tgputtylib.pas',
-  tgputtysftp in 'lib\tgputtysftp.pas';
+  tgputtysftp in 'lib\tgputtysftp.pas',
+  UnOpenAccount_Clean in 'UnOpenAccount_Clean.pas' {FrmOpenAccount_Clean},
+  UnNetAddr in 'UnNetAddr.pas' {FrmNetAddr},
+  UnServer in 'UnServer.pas' {FrmServer};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.Title := 'ткн╛╧╓╬ъ';
+  Application.Title := 'О©╫О©╫н╛О©╫О©╫О©╫О©╫';
   Application.CreateForm(Tfrmmain, frmmain);
   Application.CreateForm(Tdm_data, dm_data);
   Application.Run;

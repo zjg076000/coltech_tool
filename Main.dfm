@@ -151,10 +151,6 @@ object frmmain: Tfrmmain
       TabHeight = 30
       TabOrder = 0
       TabPosition = tpBottom
-      ExplicitLeft = 0
-      ExplicitTop = 6
-      ExplicitWidth = 1394
-      ExplicitHeight = 575
       object tab_symbols: TTabSheet
         Caption = '     '#26032#32929#26816#26597'       '
         ImageName = #26174#31034
@@ -168,7 +164,6 @@ object frmmain: Tfrmmain
           BevelKind = bkTile
           BevelOuter = bvNone
           TabOrder = 0
-          ExplicitWidth = 1386
           object Label5: TLabel
             Left = 19
             Top = 37
@@ -236,8 +231,6 @@ object frmmain: Tfrmmain
           BevelKind = bkTile
           BevelOuter = bvNone
           TabOrder = 2
-          ExplicitWidth = 1386
-          ExplicitHeight = 72
           object Label7: TLabel
             Left = 20
             Top = 45
@@ -325,7 +318,6 @@ object frmmain: Tfrmmain
           BevelKind = bkTile
           BevelOuter = bvNone
           TabOrder = 3
-          ExplicitWidth = 1386
           object spbtn_BackSymbols: TSpeedButton
             Left = 430
             Top = 27
@@ -512,7 +504,6 @@ object frmmain: Tfrmmain
           BevelKind = bkTile
           BevelOuter = bvNone
           TabOrder = 1
-          ExplicitWidth = 1386
           object Label12: TLabel
             Left = 19
             Top = 37
@@ -586,7 +577,6 @@ object frmmain: Tfrmmain
           BevelKind = bkTile
           BevelOuter = bvNone
           TabOrder = 0
-          ExplicitWidth = 1386
           object sptn_change: TSpeedButton
             Left = 261
             Top = 34
@@ -741,8 +731,6 @@ object frmmain: Tfrmmain
               SizeStyle = ssAuto
             end>
           TabOrder = 1
-          ExplicitWidth = 1386
-          ExplicitHeight = 423
           object Panel7: TPanel
             Left = 0
             Top = 0
@@ -753,8 +741,6 @@ object frmmain: Tfrmmain
             BevelKind = bkTile
             BevelOuter = bvNone
             TabOrder = 0
-            ExplicitWidth = 691
-            ExplicitHeight = 419
             object Panel8: TPanel
               Left = 0
               Top = 0
@@ -765,7 +751,6 @@ object frmmain: Tfrmmain
               BevelKind = bkTile
               BevelOuter = bvNone
               TabOrder = 0
-              ExplicitWidth = 689
               object Label19: TLabel
                 Left = 10
                 Top = 11
@@ -820,9 +805,6 @@ object frmmain: Tfrmmain
             BevelKind = bkTile
             BevelOuter = bvNone
             TabOrder = 1
-            ExplicitLeft = 691
-            ExplicitWidth = 691
-            ExplicitHeight = 419
             object Panel10: TPanel
               Left = 0
               Top = 0
@@ -833,7 +815,6 @@ object frmmain: Tfrmmain
               BevelKind = bkTile
               BevelOuter = bvNone
               TabOrder = 0
-              ExplicitWidth = 689
               object Label20: TLabel
                 Left = 15
                 Top = 11
@@ -952,7 +933,6 @@ object frmmain: Tfrmmain
           BevelKind = bkTile
           BevelOuter = bvNone
           TabOrder = 1
-          ExplicitWidth = 1386
           object Label29: TLabel
             Left = 19
             Top = 21
@@ -1013,7 +993,6 @@ object frmmain: Tfrmmain
           BevelKind = bkTile
           BevelOuter = bvNone
           TabOrder = 0
-          ExplicitWidth = 1386
           object Label33: TLabel
             Left = 34
             Top = 20
@@ -1123,8 +1102,6 @@ object frmmain: Tfrmmain
               SizeStyle = ssAuto
             end>
           TabOrder = 1
-          ExplicitWidth = 1386
-          ExplicitHeight = 416
           object Panel13: TPanel
             Left = 0
             Top = 0
@@ -1135,8 +1112,6 @@ object frmmain: Tfrmmain
             BevelKind = bkTile
             BevelOuter = bvNone
             TabOrder = 0
-            ExplicitWidth = 691
-            ExplicitHeight = 412
             object Panel14: TPanel
               Left = 0
               Top = 0
@@ -1147,7 +1122,6 @@ object frmmain: Tfrmmain
               BevelKind = bkTile
               BevelOuter = bvNone
               TabOrder = 0
-              ExplicitWidth = 689
               object Label37: TLabel
                 Left = 10
                 Top = 11
@@ -1202,9 +1176,6 @@ object frmmain: Tfrmmain
             BevelKind = bkTile
             BevelOuter = bvNone
             TabOrder = 1
-            ExplicitLeft = 691
-            ExplicitWidth = 691
-            ExplicitHeight = 412
             object Panel16: TPanel
               Left = 0
               Top = 0
@@ -1215,7 +1186,6 @@ object frmmain: Tfrmmain
               BevelKind = bkTile
               BevelOuter = bvNone
               TabOrder = 0
-              ExplicitWidth = 689
               object Label38: TLabel
                 Left = 15
                 Top = 11
@@ -1276,7 +1246,6 @@ object frmmain: Tfrmmain
           BevelKind = bkTile
           BevelOuter = bvNone
           TabOrder = 0
-          ExplicitWidth = 1386
           object Label39: TLabel
             Left = 34
             Top = 20
@@ -1551,7 +1520,7 @@ object frmmain: Tfrmmain
       Caption = #31995#32479#35774#32622
     end
     object N2: TMenuItem
-      Caption = #26085#24120#36816#32500
+      Caption = #32929#31070#31995#32479
       object N4: TMenuItem
         Caption = #26032#32929#26816#26597
         ImageIndex = 5
@@ -1584,6 +1553,16 @@ object frmmain: Tfrmmain
         OnClick = N11Click
       end
     end
+    object N12: TMenuItem
+      Caption = #24320#25143#31995#32479
+      object N13: TMenuItem
+        Caption = #31995#32479#28165#24211
+        OnClick = N13Click
+      end
+      object N14: TMenuItem
+        Caption = '-'
+      end
+    end
     object N3: TMenuItem
       Caption = #24120#29992#24037#20855
       object N9: TMenuItem
@@ -1591,6 +1570,20 @@ object frmmain: Tfrmmain
         ImageIndex = 3
         ImageName = 'database'
         OnClick = N9Click
+      end
+      object N15: TMenuItem
+        Caption = '-'
+      end
+      object N16: TMenuItem
+        Caption = #24120#29992#24037#20855#32593#22336
+        OnClick = N16Click
+      end
+      object N17: TMenuItem
+        Caption = '-'
+      end
+      object N18: TMenuItem
+        Caption = #26381#21153#22120#36164#26009
+        OnClick = N18Click
       end
     end
   end

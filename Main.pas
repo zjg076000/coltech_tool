@@ -173,6 +173,13 @@ type
     ToolButton7: TToolButton;
     N10: TMenuItem;
     N11: TMenuItem;
+    N12: TMenuItem;
+    N13: TMenuItem;
+    N14: TMenuItem;
+    N15: TMenuItem;
+    N16: TMenuItem;
+    N17: TMenuItem;
+    N18: TMenuItem;
     procedure btnConnectClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
@@ -192,6 +199,9 @@ type
     procedure N8Click(Sender: TObject);
     procedure N11Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure N13Click(Sender: TObject);
+    procedure N16Click(Sender: TObject);
+    procedure N18Click(Sender: TObject);
   private
 
 
@@ -233,7 +243,8 @@ var
 
 implementation
 
-uses FireDAC.Stan.Util, shlobj, activex, DockUtils, unDatabasetool,unNewStock,unusertel,UnStockAutoHand,unVersionUpdate;
+uses FireDAC.Stan.Util, shlobj, activex, DockUtils, unDatabasetool,unNewStock,unusertel,UnStockAutoHand,
+   unVersionUpdate,unOpenAccount_Clean,UnNetAddr,UnServer;
 {$R *.dfm}
 
 procedure copytoclipbrd2(var FileName: string);
@@ -456,6 +467,24 @@ begin
   ShowDockForm(TFrmVersionUpdate, PageControl1);
   PageControl1.ActivePage.ImageIndex:=TMenuItem(Sender).ImageIndex;
    pnlConnDef.Visible := False;
+end;
+
+procedure Tfrmmain.N13Click(Sender: TObject);
+begin
+    ShowDockForm(TFrmOpenAccount_Clean, PageControl1);
+  PageControl1.ActivePage.ImageIndex:=TMenuItem(Sender).ImageIndex;
+end;
+
+procedure Tfrmmain.N16Click(Sender: TObject);
+begin
+  ShowDockForm(TFrmNetAddr, PageControl1);
+  PageControl1.ActivePage.ImageIndex:=TMenuItem(Sender).ImageIndex;
+end;
+
+procedure Tfrmmain.N18Click(Sender: TObject);
+begin
+   ShowDockForm(TFrmServer, PageControl1);
+  PageControl1.ActivePage.ImageIndex:=TMenuItem(Sender).ImageIndex;
 end;
 
 procedure Tfrmmain.N4Click(Sender: TObject);

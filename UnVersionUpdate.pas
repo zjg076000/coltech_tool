@@ -1,4 +1,4 @@
-unit UnVersionUpdate;
+ï»¿unit UnVersionUpdate;
 
 interface
 
@@ -100,8 +100,6 @@ type
     btnUpdateUpLoad: TSpeedButton;
     edtUpatePath: TEdit;
     edtUpdateFile: TRichEdit;
-    Panel4: TPanel;
-    Panel5: TPanel;
     Panel6: TPanel;
     SplitView: TSplitView;
     Panel26: TPanel;
@@ -435,12 +433,12 @@ var
 
  begin
 
-    //1. ±£´æ¸ü¸ÄµÄÎÄ¼þµÄÄÚÈÝ
+    //1. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äµï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
       edtUpdateFile.Lines.SaveToFile(edtUpatePath.text);
 
-    //2. ¶¨Î»ÒªÉÏ´«Ô¶³ÌµÄÂ·¾¶
+    //2. ï¿½ï¿½Î»Òªï¿½Ï´ï¿½Ô¶ï¿½Ìµï¿½Â·ï¿½ï¿½
       PSFTP.ChangeDir(Utf8Encode(remotePath));
-     //3. ´´½¨ÒªÎÄ¼þµÄÎÄ¼þ
+     //3. ï¿½ï¿½ï¿½ï¿½Òªï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
        UploadStream := TFileStream.Create(edtUpatePath.text, fmOpenRead);
       try
 //        FTotalToCopy := UploadStream.Size;
@@ -454,11 +452,11 @@ var
 //        PSFTP.SetModifiedDate(Utf8Encode(FileListBox1.Items[i]),
 //          LDateTime.TimeStamp, false);
 //        GetListing;
-        showmessage('ÎÄ¼þÉÏ´«³É¹¦');
+        showmessage('ï¿½Ä¼ï¿½ï¿½Ï´ï¿½ï¿½É¹ï¿½');
       finally
         FreeAndNil(UploadStream);
         ProgressBar1.Visible := false;
-       // showmessage('ÎÄ¼þÉÏ´«³É¹¦');
+       // showmessage('ï¿½Ä¼ï¿½ï¿½Ï´ï¿½ï¿½É¹ï¿½');
       end;
     ;
 end;
@@ -606,14 +604,14 @@ var
 
  begin
 
-     //È¡µÃÔ¶³Ìlinux Â·¾¶ºÍÎÄ¼þÃû
+     //È¡ï¿½ï¿½Ô¶ï¿½ï¿½linux Â·ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½
      frmmain.proc_readini_pub(frmmain.appPath,selection,key,'',edtConfig_Path);
      APath :=trim(edtConfig_Path.text) ;
      var var_array := TRegEx.Split(APath, ',');
      remotePath:=var_array[0];
      remoteFileName:=var_array[1];
      edtConfig_Path.text:=remotePath+remoteFileName;
-     //È¡µÃ±¾µØµÄ±¸·ÝÂ·¾¶
+     //È¡ï¿½Ã±ï¿½ï¿½ØµÄ±ï¿½ï¿½ï¿½Â·ï¿½ï¿½
      var edtLocal:=tedit.create(self);
      frmmain.proc_readini_pub(frmmain.appPath,'server','backupPath','',edtLocal);
       LocalPath:=edtLocal.text;
